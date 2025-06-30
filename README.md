@@ -16,8 +16,7 @@ The dashboard covers:
 ## 📷 Screenshots
 
 ### Main Dashboard View
-![Dashboard Screenshot](![image](https://github.com/user-attachments/assets/f584ed8b-0a53-4ba6-90df-a13dbdc5af4d)
-)
+![Dashboard Screenshot](https://github.com/user-attachments/assets/f584ed8b-0a53-4ba6-90df-a13dbdc5af4d)
 
 ## 📁 Project Files
 
@@ -37,7 +36,7 @@ This project demonstrates practical skills in:
 - Data modeling and transformation
 - DAX measures and time-based analysis
 - Visual storytelling and KPI reporting
-- Dashboard layout
+- Dashboard layout and UX best practices
 
 ## 📩 Contact
 
