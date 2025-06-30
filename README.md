@@ -16,7 +16,7 @@ The dashboard covers:
 ## 📷 Screenshots
 
 ### Main Dashboard View
-![Dashboard Screenshot](0dd22392-4229-4266-ae47-51b1b914277a.png)
+![Dashboard Screenshot](![image](https://github.com/user-attachments/assets/8f3b68b2-2dde-4102-a52d-1c869c4b6d0e))
 
 ## 📁 Project Files
 
