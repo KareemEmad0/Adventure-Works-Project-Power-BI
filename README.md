@@ -16,28 +16,64 @@ The dashboard covers:
 ## 📷 Screenshots
 
 ### Main Dashboard View
-![Dashboard Screenshot](https://github.com/user-attachments/assets/f584ed8b-0a53-4ba6-90df-a13dbdc5af4d)
+![Dashboard Screenshot](![image](https://github.com/user-attachments/assets/efc18891-b5a7-45ee-9294-3b33d8d498ab)
+)
 
-## 📁 Project Files
+### Data Model View
+![Data Model Screenshot](![image](https://github.com/user-attachments/assets/bf78b46e-b556-43cc-9230-986e9383b145)
+)
 
-- `Adventure Works Sales Dashboard.pbix`: The Power BI file containing the full report and DAX measures
-- `README.md`: Project overview and documentation
+## 🚀 How to Use
 
-## ⚙️ Tools Used
+1. Clone this repo or download the `.pbix` file.
+2. Open it in **Power BI Desktop**.
+3. If prompted with a broken data connection:
+   - Go to **Home > Transform Data > Data Source Settings**.
+   - Click **Change Source** and browse to your local SQL Server database.
+   - Replace the server and database names with your own.
+   - Example:  
+     From:  
+     ```
+     Server: localhost  
+     Database: AdventureWorks2022
+     ```  
+     To:  
+     ```
+     Server: YOUR_SERVER_NAME  
+     Database: YOUR_DATABASE_NAME
+     ```
+4. Refresh the data if needed.
 
-- Power BI Desktop
-- DAX (Data Analysis Expressions)
-- Adventure Works sample dataset
+> ⚠️ This report was originally built on `AdventureWork2022` SQL database.  
+> If you don't have it, you can download it here:  
+> [AdventureWorksDW2019.bak (official Microsoft repo)](https://github.com/microsoft/sql-server-samples/releases/tag/adventureworks)
 
-## 🎯 Purpose
+## 🧠 Key DAX Measures
 
-This project demonstrates practical skills in:
+> Add your DAX measures here. Example:
 
-- Data modeling and transformation
-- DAX measures and time-based analysis
-- Visual storytelling and KPI reporting
-- Dashboard layout and UX best practices
+```DAX
+# Orders = DISTINCTCOUNT(OrderDetails[OrderID])
 
-## 📩 Contact
+# Orders by Due Date = 
+CALCULATE(
+    DISTINCTCOUNT('OrderDetails'[OrderID]),
+    USERELATIONSHIP('Dates'[Date], 'OrderDetails'[DueDate])
+)
 
-Feel free to reach out on [LinkedIn](https://www.linkedin.com/in/kareem-emad0/) or email at kareememad28@gmail.com for collaboration or feedback.
+# Orders by Order Date = 
+CALCULATE(
+    DISTINCTCOUNT('OrderDetails'[OrderID])
+)
+
+# Orders by Ship Date = 
+CALCULATE(
+    DISTINCTCOUNT(OrderDetails[OrderID]),
+    USERELATIONSHIP('Dates'[Date], 'OrderDetails'[ShipDate])
+)
+
+# Qty = SUM(OrderDetails[OrderQty])
+Total SubTotal (USD) = SUM(OrderDetails[LineTotal])
+TotalDue (USD) = [Total SubTotal (USD)] + [TotalTax (USD)] + [TotalFreight (USD)]
+TotalFreight (USD) = SUM(OrderDetails[FreightSolve])
+TotalTax (USD) = SUM(OrderDetails[TaxAmtSolve])
