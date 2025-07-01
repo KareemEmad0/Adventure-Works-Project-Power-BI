@@ -44,7 +44,7 @@ The dashboard covers:
 
 > ⚠️ This report was originally built on `AdventureWorks2022` SQL database.  
 > If you don't have it, you can download it here:  
-> [AdventureWorksDW2019.bak (official Microsoft repo)](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2022.bak)
+> [AdventureWorks2022.bak (official Microsoft repo)](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2022.bak)
 
 
 
